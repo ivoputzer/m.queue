@@ -1,0 +1,7 @@
+test/
+
+.travis.yml
+
+*.log
+*.tgz
+*.todo
