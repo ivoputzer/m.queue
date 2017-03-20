@@ -1,0 +1,23 @@
+language: node_js
+env:
+  global:
+    secure: oPFuEY3layAdtssGmmPeOahxa8XZg8cBRSVjL6f5KnJyzUoPkfo3qBVXn4n3ohnw/Myww48aSUgrrOrIm/eG3nO1DAEue9w8Xn5C0ZgJMCJdgnUk2CK/icTonmzvMYcyDKZPqYXUvdS/bSxDTAX01J2UENvwbaD0Rd8toxjJI1Jkms5H7xJ4RzgK6XYEAyr9QpLN6+L9OTJ9JskfhoqNdzramgzw9EcD3xufV/9qwUtah/d+i9+AMHr42olXO5Qw+7LQPFWypgkpELPUPhb4Bv9V5REtLKUtYv/44xGIEUd4AuV4O666R8uIRix2zVqsDiCNg2QyTLGF/3BUKL2biCq0bduEAukuM8QvA4ygTGFGsHcYB68hBmdvaI/B/32LwLc7uDlS52+ipCSPvS6issm22IDEQTouyMmKnND3sfCDShTw5ZNaGnToEvsJHbbxQVJjt8AQqicAWvmVVnecmFmcfk2uZQLFevhSjDA6eADzVMLlsYF8aM+JezcjHRrm7UmnG8OFG103EncwDRHxOSQ1CrjtZuyqYvceOgC+lH4YcDiHWix+JBm2LxPVl5bbX4mLT1t9Mf1T8BNUUo4I8gAhU63Fk3ffOeJQsEyXxy7s6Sv0qR4tQPCBFC95cJ7xsH5CcUQKA3+YyOs6E3z7RqeFOSRt8t8nTtmnRkUwWjY=
+node_js:
+- 7
+- 7.0
+- 6
+- 6.0
+after_install: npm install coveralls
+before_script: npm run lint
+script: npm run test-ci
+after_success: cat coverage/lcov.info | npm explore coveralls bin/coveralls.js
+deploy:
+  provider: npm
+  skip_cleanup: true
+  email: ivo.putzer@gmail.com
+  api_key:
+    secure: iWB9f6WbZQV+HkrqxYbQaw6kwmIN10BRX8VfoZqkTKyyws2T3vQ0cznqfAfM+UeMaErf7ki1KPeUtoFy8YfK/GA/LumieY9mXZLBPiSKavACNStRE6h2Lf64M1cJYIJuH2gnoMBWYji9mTqiyjg+c24mrYYMqp4Gqf+zw3vT1V/z9Dz1rxT2TBSB8+X6m2fp2M7XUC5Dn9i0zOxFef5B3A9yJQc96GhLhmLDqwfVqXAE8ZAXP7u4VnsT3wnPLviZXx50xqUo+NrFZqpWWohkzmWaHJoaNLWr32NPcsKO5aNCdiLaisFejhdXJ9JE81ReGbZxqoSdxo5bMfLu9TxeslYTo45HYzdZ5q9xYleSusyt7DnkgMJ4DIgRwBABK5+w4+5YbCUphIaBfpVu2gwaWXzZkLbS/nqI+v08AKVyIvA9Bza9RBk3d0zrCUgPmK0O0G07ZIiCrTsrh93kZ84MuPYsd9/pNi2ISkiouyjohITbXZsdpsxXDxDS6HAK4sDM6zZoB7ltTLgtLS97P5JHCVBNPKgSkhx03MvkleAWDnd8tocVzaYncM9o0Ea0FwNWtQX/tyLcNadZwFydq30iYiZGFKn5xz9VslVB7P2mbOMZpJM5MzRBuOtec8rymGTWDJStvmPPtjYKXhvCtQ5sQ2/XAc9hPc9WHsHZswvE6ZA=
+  on:
+    tags: false
+    branch: master
+    repo: ivoputzer/m.queue
