@@ -11,10 +11,10 @@ const {async} = require('m.queue')
 
 const queue = async(function worker (arg0, arg1, callback) {
   if (err) {
-    done(err)
+    callback(err)
     return
   }
-  callback([err], arg0, arg1)
+  callback(null, arg0, arg1)
 }, 10)
 ```
 

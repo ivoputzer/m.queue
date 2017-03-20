@@ -1,6 +1,6 @@
 {
   "name": "m.queue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "m(icro)queue is a lightweight es6+ library that exports an asynchronous function queue with adjustable concurrency",
   "main": "index.js",
   "scripts": {
