@@ -1,4 +1,4 @@
-/* global test */
+/* global test, afterEach */
 
 const {ok, equal} = require('assert')
 const {async} = require('..')
