@@ -4,11 +4,12 @@ node_js:
 - 7.0
 - 6
 - 6.0
-before_script: npm run lint
-script: npm run test-ci
+before_script:
+- npm run lint
+script:
+- npm run test-ci
 after_success:
 - npm install coveralls
-- ls node_modules
 - cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
 deploy:
   provider: npm
