@@ -7,7 +7,7 @@
     "node": "node",
     "lint": "standard",
     "test": "m.test",
-    "test-ci": "node -r ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli cover --print detail test"
+    "test-ci": "node -r ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
   },
   "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
   "license": "MIT",
