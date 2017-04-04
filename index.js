@@ -1,6 +1,4 @@
-exports.async = exports.Queue = Queue
-
-function Queue (consumer, concurrency = 1) {
+exports.async = (consumer, concurrency = 1) => {
   return Object.create(Array.prototype, {
     concurrency: {
       value: concurrency,
@@ -47,7 +45,6 @@ function Queue (consumer, concurrency = 1) {
   function tick (queue) {
     while (!queue.paused && queue.jobs < concurrency && queue.length) {
       const [args, callback] = next(queue.shift())
-
       consumer(...args, (...callbackArgs) => {
         queue.jobs--
         tick(queue)
@@ -62,3 +59,4 @@ function Queue (consumer, concurrency = 1) {
     }
   }
 }
+
