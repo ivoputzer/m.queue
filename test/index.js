@@ -1,4 +1,4 @@
-/* global test, afterEach */
+/* global test */
 
 const {ok, equal, deepEqual} = require('assert')
 const {async, sequence} = require('..')
@@ -177,11 +177,6 @@ test('exports.async', function () {
         queue.push(once)
         queue.resume()
         setImmediate(once.bind(null, new Error('execution not resumed')))
-      })
-
-      afterEach(function reset () {
-        queue.length = 0
-        queue.paused = false
       })
     })
 
