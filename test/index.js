@@ -1,9 +1,19 @@
 /* global test, afterEach */
 
-const {ok, equal} = require('assert')
-const {async} = require('..')
+const {ok, equal, deepEqual} = require('assert')
+const {async, sequence} = require('..')
 
-test('exports/async', function () {
+test('exports.sequence', function () {
+  test('is callable', function () {
+    ok(sequence instanceof Function)
+  })
+
+  test('behaves like async with concurrency bound to 1', function () {
+    deepEqual(sequence(), async())
+  })
+})
+
+test('exports.async', function () {
   test('is callable', function () {
     ok(async instanceof Function)
   })

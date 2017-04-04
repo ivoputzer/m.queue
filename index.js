@@ -60,3 +60,4 @@ exports.async = (consumer, concurrency = 1) => {
   }
 }
 
+exports.sequence = (consumer) => exports.async(consumer, 1)
