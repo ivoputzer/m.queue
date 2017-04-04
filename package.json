@@ -1,13 +1,13 @@
 {
   "name": "m.queue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "m(icro)queue is a lightweight es6+ library that exports an asynchronous function queue with adjustable concurrency",
   "main": "index.js",
   "scripts": {
     "node": "node",
     "lint": "standard",
     "test": "m.test",
-    "text-ci": "node --require node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
+    "test-ci": "node --require ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
   },
   "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
   "license": "MIT",
