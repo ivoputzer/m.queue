@@ -178,6 +178,10 @@ test('exports.async', function () {
         queue.resume()
         setImmediate(once.bind(null, new Error('execution not resumed')))
       })
+
+      test('has no effect when queue is not paused', function () {
+        deepEqual(queue.resume(), queue)
+      })
     })
 
     function onceFor (done) {
