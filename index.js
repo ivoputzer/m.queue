@@ -46,7 +46,8 @@ function Queue (consumer, concurrency = 1) {
   })
   function tick (queue) {
     while (!queue.paused && queue.jobs < concurrency && queue.length) {
-      const [args, callback] = shift(queue)
+      const [args, callback] = next(queue.shift())
+
       consumer(...args, (...callbackArgs) => {
         queue.jobs--
         tick(queue)
@@ -54,10 +55,9 @@ function Queue (consumer, concurrency = 1) {
       })
       queue.jobs++
     }
-    function shift (queue) {
-      const args = queue.shift()
+    function next (args) {
       return args[args.length - 1] instanceof Function
-        ? [args.slice(0, -1), ...args.slice(-1)]
+        ? [args, args.pop()]
         : [args, Function.prototype]
     }
   }
