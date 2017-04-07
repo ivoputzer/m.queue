@@ -1,5 +1,3 @@
-/* global test */
-
 const {ok, equal, deepEqual} = require('assert')
 const {async, sequence} = require('..')
 

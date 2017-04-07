@@ -9,6 +9,11 @@
     "test": "m.test",
     "test-ci": "node --require ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
   },
+  "standard": {
+    "globals": [
+      "test"
+    ]
+  },
   "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
   "license": "MIT",
   "devDependencies": {
