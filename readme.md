@@ -3,7 +3,7 @@
 
 **[m(icro)](https://github.com/ivoputzer/m.cro#readme)[queue](https://github.com/ivoputzer/m.queue)** is a lightweight es6+ library that exports an asynchronous function queue with adjustable concurrency.
 
-## async
+## .async
 creates a `queue` object with the specified `concurrency`. tasks added to the queue are processed in parallel (up to the concurrency limit). if all `workers` are in progress, the task is queued until one becomes available. once a `worker` completes a task, that task's callback is called.
 
 ```javascript
@@ -17,6 +17,23 @@ const queue = async(function worker (arg0, arg1, callback) {
   callback(null, arg0, arg1)
 }, 10)
 ```
+
+## .sequence
+creates a `queue` object. tasks added to the queue are processed sequentially. while the `worker` is executing tasks will be queued. once a `worker` completes a task, that task's callback is called.
+
+```javascript
+const {sequence} = require('m.queue')
+
+const queue = sequence(function worker (arg0, arg1, callback) {
+  if (err) {
+    callback(err)
+    return
+  }
+  callback(null, arg0, arg1)
+}, 10)
+```
+
+---
 
 ### queue.resume()
 resumes worker execution
