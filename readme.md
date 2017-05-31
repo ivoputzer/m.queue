@@ -30,7 +30,7 @@ const queue = sequence(function worker (arg0, arg1, callback) {
     return
   }
   callback(null, arg0, arg1)
-}, 10)
+})
 ```
 
 ---
