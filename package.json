@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "node": "node",
-    "lint": "standard",
+    "pretest": "standard",
     "test": "m.test",
     "coverage": "node --require ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
   },
@@ -17,7 +17,6 @@
   "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
   "license": "MIT",
   "devDependencies": {
-    "istanbul": "^0.4.5",
     "m.test": "0.0.54",
     "standard": "^9.0.1"
   },
@@ -28,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/ivoputzer/m.queue/issues"
   },
-  "homepage": "https://github.com/ivoputzer/m.queue#readme"
+  "homepage": "https://github.com/ivoputzer/m.queue#readme",
+  "optionalDependencies": {
+    "istanbul": "^0.4.5"
+  }
 }
