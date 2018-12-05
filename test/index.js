@@ -1,5 +1,5 @@
-const {ok, equal, deepEqual} = require('assert')
-const {async, sequence} = require('..')
+const { ok, strictEqual: equal, strictDeepEqual: deepEqual } = require('assert')
+const { async, sequence } = require('..')
 
 test('exports.sequence', function () {
   test('is callable', function () {
@@ -116,8 +116,8 @@ test('exports.async', function () {
         async(function unqueue (arg0, arg1, callback) {
           callback(null)
         })
-        .push('arg0', 'arg1')
-        .push('arg0', 'arg1', done)
+          .push('arg0', 'arg1')
+          .push('arg0', 'arg1', done)
       })
     })
 
@@ -138,8 +138,8 @@ test('exports.async', function () {
         async(function unqueue (arg0, arg1, callback) {
           callback(null)
         })
-        .push('arg0', 'arg1')
-        .push('arg0', 'arg1', done)
+          .push('arg0', 'arg1')
+          .push('arg0', 'arg1', done)
       })
     })
 

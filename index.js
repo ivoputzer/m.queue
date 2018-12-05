@@ -44,11 +44,11 @@ exports.async = (consumer, concurrency = 1) => {
   })
   function tick (queue) {
     while (!queue.paused && queue.jobs < concurrency && queue.length) {
-      const [args, callback] = next(queue.shift())
+      const [args, fn] = next(queue.shift())
       consumer(...args, (...callbackArgs) => {
         queue.jobs--
         tick(queue)
-        callback(...callbackArgs)
+        fn(...callbackArgs)
       })
       queue.jobs++
     }
