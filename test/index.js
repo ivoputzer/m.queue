@@ -1,4 +1,4 @@
-const { ok, strictEqual: equal, strictDeepEqual: deepEqual } = require('assert')
+const { ok, strictEqual: equal, deepStrictEqual: deepEqual } = require('assert')
 const { async, sequence } = require('..')
 
 test('exports.sequence', function () {
