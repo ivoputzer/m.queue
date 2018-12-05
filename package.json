@@ -1,7 +1,24 @@
 {
   "name": "m.queue",
-  "version": "2.0.1",
+  "version": "2.0.2",
+  "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
   "description": "m(icro)queue is a lightweight es6+ library that exports an asynchronous function queue with adjustable concurrency",
+  "keywords": [
+    "queue",
+    "async",
+    "sequence",
+    "concurrency",
+    "array",
+    "resume",
+    "pause",
+    "drain",
+    "unshift",
+    "push",
+    "length",
+    "shift",
+    "pop",
+    "m.icro"
+  ],
   "main": "index.js",
   "scripts": {
     "node": "node",
@@ -9,26 +26,29 @@
     "test": "m.test",
     "coverage": "node --require ./node_modules/m.test/global.js ./node_modules/istanbul/lib/cli.js cover --print detail test"
   },
+  "license": "MIT",
   "standard": {
-    "globals": [
+    "global": [
       "test"
     ]
   },
-  "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
-  "license": "MIT",
-  "devDependencies": {
-    "m.test": "0.0.54",
-    "standard": "^9.0.1"
+  "scripts": {
+    "node": "node",
+    "test": "m.test"
   },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "m.test": "0.0.54"
+  },
+  "homepage": "https://github.com/ivoputzer/m.queue#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivoputzer/m.queue.git"
   },
   "bugs": {
     "url": "https://github.com/ivoputzer/m.queue/issues"
-  },
-  "homepage": "https://github.com/ivoputzer/m.queue#readme",
-  "optionalDependencies": {
-    "istanbul": "^0.4.5"
   }
 }
